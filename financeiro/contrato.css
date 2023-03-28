@@ -1,0 +1,173 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    background-color: rgb(212, 212, 212);
+}
+ul{
+    list-style: none;
+}
+
+.box{
+    position: absolute;
+    margin: 20%;
+    padding: 35px;
+    border: none;
+    background-color: #FFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 4px #d1d1d1;
+    left: 12%;
+    width: 720px;
+    top: 0px;
+    margin-top: 10%;
+}
+
+.nav fieldset{
+    background:rgb(50, 54, 58);
+    width: 80px;
+    height: 100%;
+}
+.dados-cliente fieldset{
+    background: #FFFF;
+    border-radius: 10px;
+    margin-left: 10%;
+    flex-direction: column;
+    border: none;
+    width: 200px;
+    position: relative;
+    box-shadow: 0px 0px 3px 4px #d1d1d1;
+    margin-top: 3%;
+
+}
+.dados-representante fieldset{
+    background: #FFFF;
+    border-radius: 10px;
+    flex-direction: column;
+    border: none;
+    width: 200px;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 3%;
+    box-shadow: 0px 0px 3px 4px #d1d1d1;
+}
+.dados-empresa fieldset{
+    background: #FFFF;
+    border-radius: 10px;
+    flex-direction: column;
+    border: none;
+    width: 200px;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 3%;
+    box-shadow: 0px 0px 3px 4px #d1d1d1;
+}
+
+legend{
+    
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+#contratante, #rua,
+#bairro, #cidade, #cnpj, #cep{
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 2px rgba(2, 2, 2, 0.591);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+#representante,
+#cpf,
+#cidade1{
+    margin-left: 15px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 2px rgba(10, 10, 10, 0.591);
+    font-family: 'Poppins', sans-serif;
+}
+#empresa, #rua1,
+#bairro1, #cidade2, #cnpj1, #cep1{
+    margin-left: 15px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 2px rgba(7, 7, 7, 0.591);
+    font-family: 'Poppins', sans-serif;
+}
+#button{
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgb(50, 54, 58);
+    width: 200px;
+    height: 30px;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 3%;
+    color: rgb(50, 54, 58);
+    font-family: 'Poppins', sans-serif;
+}
+#button:hover{
+    color: rgb(255, 255, 255);
+    background: rgb(50, 54, 58);
+    border: none;
+}
+#gerar{
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgb(50, 54, 58);
+    width: 200px;
+    height: 30px;
+    position: relative;
+    margin-top: 1%;
+    color: rgb(50, 54, 58);
+    margin-left: 10%;
+    font-family: 'Poppins', sans-serif;
+}
+#gerar:hover{
+    color: rgb(255, 255, 255);
+    background: rgb(50, 54, 58);
+    border: none;
+}
+a{
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    width: 55%;/*comprimento*/
+    text-decoration: none;
+    padding: 7px;/*espaçamento entre elemento e borda*/
+    font-size: 15px;
+    color: rgb(50, 54, 58);
+    cursor: pointer;
+    align-items: center;
+  
+  
+}a:hover{
+    box-shadow: 3px 3px 3px rgb(50, 54, 58);
+}
+nav{
+    background: #9a43ea;
+    height: 100px;
+    width: 100%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    background: rgb(50, 54, 58);
+    height: 80px;
+    box-shadow: 1px 1px 4px rgb(8, 8, 8);
+    justify-content: space-between;
+    padding: 0 10%;
+    
+  }
