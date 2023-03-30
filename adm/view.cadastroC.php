@@ -1,5 +1,6 @@
 <?php
     if(isset($_POST['submit'])){
+
         include_once('config.php');
 
         $id_cliente = $_POST['id_cliente'];
@@ -12,9 +13,10 @@
         $cidade = $_POST['cidade'];
         $cep = $_POST['cep'];
         $obs = $_POST['obs'];
+        $status = $_POST['status'];
 
-        $result = mysqli_query($conexao, "INSERT INTO formulario.cliente(id_cliente, cnpj, razao_social, telefone, email, rua, bairro, cidade, cep, obs)
-        VALUES('$id_cliente', '$cnpj', '$razao_social', '$telefone', '$email',  '$rua', '$bairro', '$cidade',' $cep', '$obs')");
+        $result = mysqli_query($conexao, "INSERT INTO formulario.cliente(id_cliente, cnpj, razao_social, telefone, email, rua, bairro, cidade, cep, obs, status_cliente)
+        VALUES('$id_cliente', '$cnpj', '$razao_social', '$telefone', '$email',  '$rua', '$bairro', '$cidade',' $cep', '$obs', '$status')");
     }
 
 ?>
@@ -41,6 +43,84 @@
             })
         </script>
 </head>
+<style>
+  .status{
+    visibility: hidden;
+  }
+
+  #ativo{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid rgb(85, 241, 111);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+
+  }#ativo:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(85, 241, 111);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+  }#ativo:checked:before{
+    opacity: 1;
+  }
+  #ativo:checked:focus{
+    box-shadow: 0 0 5px rgb(158, 255, 79);
+  }
+  .status label{
+    padding-left: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 1px;
+
+  }.status{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  #Inativo{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid rgb(241, 90, 85);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    margin-left: 35px;
+
+  }#Inativo:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(241, 90, 85);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+  }#Inativo:checked:before{
+    opacity: 1;
+  }
+  #Inativo:checked:focus{
+    box-shadow: 0 0 5px rgb(255, 164, 79);
+  }
+  h5{
+    visibility: hidden;
+  }
+
+</style>
 <body>
     <div class="container">
         <div class="py-5 text-center">
@@ -51,13 +131,22 @@
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="text-muted">Observações</span>
-              <span class="badge badge-secondary badge-pill">?</span>
             </h4>
-           
               <div class="input-group">
                 <input type="text" id="obs" autocomplete = "off" name="obs" class="form-control" placeholder="Tipo de Serviço Prestado">
               </div>
+              <br>
+              <h5>Status:</h5>
+              <div class="status">
+                <br><br>
+                <input type="radio" value="Ativo" id="ativo" name="status" checked>
+                <label for="ativo"><strong>Ativo</strong></label>
+                
+                <input type="radio" value="Inativo" id="Inativo" name="status">
+                <label for="Inativo"><strong>Inativo</strong></label>
+              </div>
           </div>
+          
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Cliente</h4>
           
@@ -165,7 +254,6 @@
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">© 2023 SG manager</p>
             <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Sobre</a></li>
             </ul>
         </footer>
         </form>
